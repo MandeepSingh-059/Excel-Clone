@@ -1,0 +1,342 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.container{
+    height: 100vh;
+    position: relative;
+}
+
+
+
+/* TITLE BAR */
+.title-bar{
+    height: 4vh;
+    background-color: #107c41;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
+
+
+/* MENU BAR */
+.menu-bar{
+    height: 4vh;
+    color: #fff;
+    background-color: #107c41;
+    display: flex;
+    flex-direction: row;
+}
+.menu-item{
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.menu-item.selected{
+    background-color: #fff;
+    color: #107c41;
+}
+.menu-item:hover{
+    background-color: #09572c;
+    cursor: pointer;
+}
+.menu-item.selected:hover{
+    background-color: #fff;
+    cursor: default;
+}
+
+
+/* MENU ICON BAR */
+.menu-icon-bar{
+    height: 4vh;
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    align-items: center;
+}
+.menu-icon-bar *{
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+.menu-icon{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.menu-icon:hover{
+    background-color: lightgray;
+    cursor: pointer;
+    height: 100%;;
+}
+.font-family-selector{
+    width: 125px;
+}
+.selector{
+    font-size: 18px;
+}
+
+.menu-icon.selected{
+    background-color: lightgray;
+}
+
+
+.icon-color-parent{
+    position: relative;
+}
+
+.text-color-picker{
+    position: absolute;
+    border: none;
+    top: 1rem;   
+    right: 0.4rem; 
+    max-width: 29px;
+    max-height: 12px;
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+/* FORMULA BAR */
+.formula-bar{
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 241, 241);
+}
+.formula-editor{
+    height: 70%;
+    border: 1px solid lightgray;
+    background-color: #fff;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.selected-cell{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+.function-sign{
+    height: 70%;
+    width: 40px;
+}
+.formula-input{
+    width: calc(100vw - 150px);
+    outline-color: #107c41;
+}
+
+
+
+
+
+
+
+
+
+
+/* SHEET BAR */
+.sheet-bar{
+    height: 4vh;
+    display: flex;
+    align-items: center;
+}
+
+.scroller{
+    width: 60px;
+}
+.icon-left-scroll, .icon-right-scroll{
+    font-size: 18px;
+}
+.icon-left-scroll:hover, .icon-right-scroll:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+.icon-add{
+    color: #107c41;
+    width: 40px;
+}
+.icon-add:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.sheet-tab-container{
+    border: 1px solid lightgray;
+    width: calc(100vw - 200px);
+    display: flex;
+}
+.sheet-tab{
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    width: 80px;
+    border-right: 1px solid lightgray;
+}
+.sheet-tab.selected{
+    border-bottom: 4px solid #107c41;
+}
+.sheet-tab:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+.sheet-tab.selected:hover{
+    cursor: default;
+    background-color: #fff;
+}
+
+.sheet-options-modal{
+    position: absolute;
+    bottom: 4vh;
+    height: 30px;
+    width: 60px;
+    background-color: #fff;   
+    box-shadow: 0 0 3px 1px lightgray;
+}
+.sheet-delete{
+    height: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sheet-delete:hover{
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+
+
+/* DATA CONTAINER BAR */
+.data-container{
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.select-all{
+    height: 30px;
+    width: 30px;
+    border: 1px solid lightgray;
+}
+.row-name-container{
+    height: calc(80vh - 30px);
+    width: 30px;
+    border: 1px solid lightgray;
+    overflow: hidden;
+}
+.column-name-container{
+    height: 30px;
+    width: calc(100vw - 30px);
+    border: 1px solid lightgray;
+    overflow: hidden;
+}
+.input-cell-container{
+    height: calc(80vh - 30px);
+    width: calc(100vw - 30px);
+    border: 1px solid lightgray;
+    overflow: scroll;
+}
+
+
+.column-name-container{
+    display: flex;
+
+}
+.column-name{
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid lightgray;
+    font-weight: bold;
+}
+
+.row-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 4vh;
+    border-bottom: 1px solid lightgray;       
+}
+.row{
+    max-height: 4vh;
+}
+
+.cell-row{
+    display: flex;
+}
+.input-cell{
+    min-width: 100px;
+    min-height: 4vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    font-size: 14pxf;
+    font-family: arial;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;    
+    outline-color: #107c41;   
+}
+
+.input-cell.selected{
+    border: 2px solid #107c41;
+}
+.input-cell.top-cell-selected{
+    border-top: none;
+}
+.input-cell.bottom-cell-selected{
+    border-bottom: 1px solid lightgray;
+}
+.input-cell.left-cell-selected{
+    border-left: none;
+}
+.input-cell.right-cell-selected{
+    border-right: 1px solid lightgray;
+}
+
+
+
+
+/* OPEN and SAVE */
+
+.menu-file{
+    position: relative;
+}
+.btn-save,.btn-open{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: #107c41;
+    top: 100%;   
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+.btn-open{
+    top: 200%;   
+}
+.btn-save:hover,.btn-open:hover{
+    background-color: #09572c;
+}
